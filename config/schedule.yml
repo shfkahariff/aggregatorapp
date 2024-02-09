@@ -1,0 +1,7 @@
+generate_articles_job:
+  #cron: "0 0 0 * *"
+  cron: "*0 * * * *"
+  class: "GenerateArticlesJob"
+  queue: "default"
+  name: "Generate articles"
+  description: "Generate articles for the next day"

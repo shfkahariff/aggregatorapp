@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div id="posts">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>headlines</th>
+        <th>titleurl</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.headlines %></td>
+          <td><%= post.titleurl %></td>
+          <td>
+            <%= link_to "Show", post, class: "btn btn-primary" %>
+            <%= link_to "Edit", edit_post_path(post), class: "btn btn-secondary" %>
+            <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New post", new_post_path %>

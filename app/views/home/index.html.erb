@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+<h3>Counts: <%= @posts.count %></h3>
+
+<div id="posts">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>headlines</th>
+                <th>publish date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.headlines, post.titleurl, target: "_blank" %></td>
+          <td><%= post.publishdate.strftime("%d %B %Y") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <%= pagy_nav(@pagy).html_safe %>
+    </ul>
+  </nav>
+</div>
