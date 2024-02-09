@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: aggregatorapp_production
-  username: aggregatorapp
-  password: <%= ENV["AGGREGATORAPP_DATABASE_PASSWORD"] %>
+  username: deploy
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: 127.0.0.1
