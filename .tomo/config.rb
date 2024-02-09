@@ -29,7 +29,7 @@ set env_vars: {
   RAILS_SERVE_STATIC_FILES: "1",
   RUBY_YJIT_ENABLE: "1",
   BOOTSNAP_CACHE_DIR: "tmp/bootsnap-cache",
-  RAILS_MASTER_KEY: "75feadd971114ebe350fecea6019283e"
+  RAILS_MASTER_KEY: "e694dcf38a59e9f06d59ae6f49b53ca4"
 }
 set linked_dirs: %w[
   .yarn/cache
