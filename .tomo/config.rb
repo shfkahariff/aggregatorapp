@@ -22,14 +22,14 @@ set git_exclusions: %w[
   test/
 ]
 set env_vars: {
-  BUILD_AT: Time.now.to_i,
   RACK_ENV: "production",
   RAILS_ENV: "production",
   RAILS_LOG_TO_STDOUT: "1",
   RAILS_SERVE_STATIC_FILES: "1",
   RUBY_YJIT_ENABLE: "1",
   BOOTSNAP_CACHE_DIR: "tmp/bootsnap-cache",
-  RAILS_MASTER_KEY: "e694dcf38a59e9f06d59ae6f49b53ca4"
+  DATABASE_URL: "postgresql://deploy:wlk123@127.0.0.1/aggregatorapp",
+  SECRET_KEY_BASE: :prompt
 }
 set linked_dirs: %w[
   .yarn/cache
@@ -44,8 +44,9 @@ set linked_dirs: %w[
 ]
 
 set linked_files: %w[
-  config/database.yml
   config/master.key
+  config/credentials/production.key
+  config/database.yml
 ]
 
 setup do

@@ -34,7 +34,7 @@ gem 'httparty'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'pagy'
-
+gem 'tomo', '~> 1.18'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
