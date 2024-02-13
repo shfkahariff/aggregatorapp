@@ -6,6 +6,7 @@ plugin "nodenv"
 plugin "puma"
 plugin "rbenv"
 plugin "./plugins/aggregatorapp.rb"
+plugin "sidekiq"
 
 host "deploy@143.198.215.255"
 
@@ -59,6 +60,7 @@ setup do
   run "bundler:config"
   run "bundler:install"
   run "puma:setup_systemd"
+  run "sidekiq:setup_systemd"
 end
 
 deploy do
@@ -76,4 +78,5 @@ deploy do
   run "core:clean_releases"
   run "bundler:clean"
   run "core:log_revision"
+  run "sidekiq:restart"
 end
